@@ -4,7 +4,9 @@ class Element {
     this.eles = [];
     cssNames.forEach((element) => {
       document.querySelectorAll("." + element).forEach((ele) => {
-        this.eles.push(ele);
+        if(!ele.classList.contains("exclude-dark-mode")) {
+          this.eles.push(ele);
+        }
       });
     });
 
